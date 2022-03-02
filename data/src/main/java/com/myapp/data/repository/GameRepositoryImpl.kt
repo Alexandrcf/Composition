@@ -8,7 +8,7 @@ import java.lang.Integer.min
 import kotlin.math.max
 import kotlin.random.Random
 
-object GameRepositoryImpl: GameRepository {
+object GameRepositoryImpl : GameRepository {
 
     private const val MIN_SUM_VALUE = 2
     private const val MIN_ANSWER_VALUE = 1
@@ -19,7 +19,7 @@ object GameRepositoryImpl: GameRepository {
         val options = HashSet<Int>()
         val rightAnswer = sum - visibleNumber
         options.add(rightAnswer)
-        val from =  max(rightAnswer - countOfOptions, MIN_ANSWER_VALUE)
+        val from = max(rightAnswer - countOfOptions, MIN_ANSWER_VALUE)
         val to = min(maxSumValue, rightAnswer + countOfOptions)
         while (options.size < countOfOptions) {
             options.add(Random.nextInt(from, to))
